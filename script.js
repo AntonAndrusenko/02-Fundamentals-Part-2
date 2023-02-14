@@ -329,3 +329,66 @@ console.log(mixJuice); */
 ///////////////////////////
 // -- OBJECTS METHODS -- //
 ///////////////////////////
+
+const anton = {
+  firstName: "Anton",
+  lastName: "Andrusenko",
+  birthYear: 1989,
+  job: "teacher",
+  friends: ["Michael", "Stephen", "Greg"],
+  hasDriverLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2023 - anton.birthYear;
+  // },
+
+  calcAge: function () {
+    // console.log(this);
+    this.age = 2023 - this.birthYear;
+    return this.age;
+
+    // use this method to use properties from the object
+    // return 2023 - this.birthYear;
+  },
+
+  getSummary: function () {
+    ////BASIC WAY
+
+    // if (this.hasDriverLicense) {
+    //   this.summary = `${this.firstName} is ${this.age}-year old ${this.job}, and he has a driver's license`;
+    // } else {
+    //   this.summary = `${this.firstName} is ${this.age}-year old ${this.job}, and he has no driver's license`;
+    // }
+    // return this.summary;
+
+    ////BETTER WAY
+
+    // return this.hasDriverLicense
+    //   ? (this.summary = `${this.firstName} is ${this.calcAge()}-year old ${
+    //       this.job
+    //     }, and he has a driver's license`)
+    //   : (this.summary = `${this.firstName} is ${this.calcAge()}-year old ${
+    //       this.job
+    //     }, and he has no driver's license`);
+
+    ////BEST WAY
+
+    this.summary = `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${this.hasDriverLicense ? "a" : "no"} driver's license`;
+    return this.summary;
+  },
+};
+
+console.log(anton["calcAge"]());
+console.log(anton.calcAge());
+
+console.log(anton.age);
+console.log(anton.age);
+console.log(anton.age);
+
+console.log(anton.getSummary());
+console.log(anton);
+console.log(anton.summary);
+
+//challenge
