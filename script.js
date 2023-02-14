@@ -287,24 +287,45 @@ console.log(mixJuice); */
 // -- INTRO TO OBJECTS -- //
 ////////////////////////////
 
-const anton = {
-  firstName: "Anton",
-  lastName: "Andrusenko",
-  age: 2023 - 1989,
-  job: "teacher",
-  friends: ["Michael", "Stephen", "Greg"],
-};
+// const anton = {
+//   firstName: "Anton",
+//   lastName: "Andrusenko",
+//   age: 2023 - 1989,
+//   job: "teacher",
+//   friends: ["Michael", "Stephen", "Greg"],
+// };
 
-console.log(anton);
+// console.log(anton);
 
-console.log(anton.firstName, anton.lastName);
-console.log(anton["firstName"], anton["lastName"]);
+// // console.log(anton.firstName, anton.lastName);
+// // console.log(anton["firstName"], anton["lastName"]);
 
-const nameKey = "Name";
-console.log(anton["first" + nameKey], anton["last" + nameKey]);
+// // const nameKey = "Name";
+// // console.log(anton["first" + nameKey], anton["last" + nameKey]);
 
-const interestedIn = prompt(
-  "What do you want to know about Anton? Choose between firstName, lastName, age, job and friends"
-);
+// const interestedIn = prompt(
+//   "What do you want to know about Anton? Choose between firstName, lastName, age, job and friends"
+// );
 
-console.log(anton[interestedIn]);
+// if (anton[interestedIn]) {
+//   console.log(`Here is you answer: ${anton[interestedIn]}`);
+// } else {
+//   console.log(
+//     `Wrong request! Choose between firstName, lastName, age, job and friends`
+//   );
+// }
+
+// anton.location = "Portugal";
+// anton["LinkedIn"] = "https://linkedin.com/";
+
+// console.log(anton);
+
+// //Challenge
+
+// console.log(
+//   `${anton.firstName} has ${anton.friends.length} friends and his best friend called ${anton.friends[0]}`
+// );
+
+///////////////////////////
+// -- OBJECTS METHODS -- //
+///////////////////////////
