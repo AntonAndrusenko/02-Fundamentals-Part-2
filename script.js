@@ -397,63 +397,135 @@ console.log(mixJuice); */
 // -- CODING CHALLENGE # 2 -- //
 ////////////////////////////////
 
-const propMarkMiller = {
-  firstName: `Mark`,
-  lastName: "Miller",
-  mass: 78,
-  height: 1.69,
-  calcBMI: function () {
-    this.bmi = this.mass / this.height ** 2;
-    return this.bmi.toFixed(2);
-  },
-};
+// const propMarkMiller = {
+//   firstName: `Mark`,
+//   lastName: "Miller",
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     this.bmi = this.mass / this.height ** 2;
+//     return this.bmi.toFixed(2);
+//   },
+// };
 
-const propJohnSmith = {
-  firstName: `John`,
-  lastName: ` Smith`,
-  mass: 92,
-  height: 1.95,
-  calcBMI: function () {
-    this.bmi = this.mass / this.height ** 2;
-    return this.bmi.toFixed(2);
-  },
-};
+// const propJohnSmith = {
+//   firstName: `John`,
+//   lastName: ` Smith`,
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     this.bmi = this.mass / this.height ** 2;
+//     return this.bmi.toFixed(2);
+//   },
+// };
 
-propJohnSmith.calcBMI();
-propMarkMiller.calcBMI();
+// propJohnSmith.calcBMI();
+// propMarkMiller.calcBMI();
 
-// if (propJohnSmith.calcBMI() > propMarkMiller.calcBMI()) {
+// // if (propJohnSmith.calcBMI() > propMarkMiller.calcBMI()) {
+// //   console.log(
+// //     `${
+// //       propJohnSmith.firstName
+// //     }'s BMI (${propJohnSmith.calcBMI()}) is higher than ${
+// //       propMarkMiller.firstName
+// //     }'s (${propMarkMiller.calcBMI()})!`
+// //   );
+// // } else if (propJohnSmith.calcBMI() < propMarkMiller.calcBMI()) {
+// //   console.log(
+// //     `${
+// //       propMarkMiller.firstName
+// //     }'s BMI (${propMarkMiller.calcBMI()}) is higher than ${
+// //       propJohnSmith.firstName
+// //     }'s (${propJohnSmith.calcBMI()})!`
+// //   );
+// // }
+
+// if (propJohnSmith.bmi > propMarkMiller.bmi) {
 //   console.log(
-//     `${
-//       propJohnSmith.firstName
-//     }'s BMI (${propJohnSmith.calcBMI()}) is higher than ${
+//     `${propJohnSmith.firstName}'s BMI (${propJohnSmith.bmi.toFixed(
+//       2
+//     )}) is higher than ${
 //       propMarkMiller.firstName
-//     }'s (${propMarkMiller.calcBMI()})!`
+//     }'s (${propMarkMiller.bmi.toFixed(2)})!`
 //   );
-// } else if (propJohnSmith.calcBMI() < propMarkMiller.calcBMI()) {
+// } else if (propJohnSmith.bmi < propMarkMiller.bmi) {
 //   console.log(
-//     `${
-//       propMarkMiller.firstName
-//     }'s BMI (${propMarkMiller.calcBMI()}) is higher than ${
+//     `${propMarkMiller.firstName}'s BMI (${propMarkMiller.bmi.toFixed(
+//       2
+//     )}) is higher than ${
 //       propJohnSmith.firstName
-//     }'s (${propJohnSmith.calcBMI()})!`
+//     }'s (${propJohnSmith.bmi.toFixed(2)})!`
 //   );
 // }
 
-if (propJohnSmith.bmi > propMarkMiller.bmi) {
-  console.log(
-    `${propJohnSmith.firstName}'s BMI (${propJohnSmith.bmi.toFixed(
-      2
-    )}) is higher than ${
-      propMarkMiller.firstName
-    }'s (${propMarkMiller.bmi.toFixed(2)})!`
-  );
-} else if (propJohnSmith.bmi < propMarkMiller.bmi) {
-  console.log(
-    `${propMarkMiller.firstName}'s BMI (${propMarkMiller.bmi.toFixed(
-      2
-    )}) is higher than ${
-      propJohnSmith.firstName
-    }'s (${propJohnSmith.bmi.toFixed(2)})!`
-  );
+///////////////////////////////////
+// -- ITERATION: THE FOR LOOP -- //
+///////////////////////////////////
+
+// console.log(`Lifting weights repetition 1 🏋️`);
+// console.log(`Lifting weights repetition 2 🏋️`);
+// console.log(`Lifting weights repetition 3 🏋️`);
+// console.log(`Lifting weights repetition 4 🏋️`);
+// console.log(`Lifting weights repetition 5 🏋️`);
+// console.log(`Lifting weights repetition 6 🏋️`);
+// console.log(`Lifting weights repetition 7 🏋️`);
+// console.log(`Lifting weights repetition 8 🏋️`);
+// console.log(`Lifting weights repetition 9 🏋️`);
+// console.log(`Lifting weights repetition 10 🏋️`);
+
+// for loop keeps running while the condition is TRUE
+
+// for (let rep = 1; rep <= 3; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️`);
+// }
+
+////////////////////////////////////////////////
+// -- LOOPING ARRAYS, BREAKING, CONTINUING -- //
+////////////////////////////////////////////////
+
+const antonArray = [
+  "Anton",
+  "Andrusenko",
+  2023 - 1989,
+  "product owner",
+  ["Vasily", "Dima", "Stas"],
+  true,
+];
+
+// const types = [];
+
+// for (let i = 0; i <= antonArray.length - 1; i++) {
+//   // console.log(antonArray[i], typeof antonArray[i]);
+
+//   // filling an array
+//   // types[i] = typeof antonArray[i];
+
+//   types.push(typeof antonArray[i]);
+
+//   console.log(types[i]);
+// }
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2023 - years[i]);
+//   console.log(years[i]);
+//   console.log(ages[i]);
+// }
+
+// console.log(ages);
+
+//continue and break
+
+console.log(`--ONLY STRINGS--`);
+for (let i = 0; i < antonArray.length; i++) {
+  if (typeof antonArray[i] !== "string") continue;
+  console.log(antonArray[i], typeof antonArray[i]);
+}
+
+console.log(`--BREAK WITH NUMBER--`);
+for (let i = 0; i < antonArray.length; i++) {
+  if (typeof antonArray[i] === "number") break;
+  console.log(antonArray[i], typeof antonArray[i]);
 }
