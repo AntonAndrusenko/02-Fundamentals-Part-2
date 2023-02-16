@@ -330,65 +330,130 @@ console.log(mixJuice); */
 // -- OBJECTS METHODS -- //
 ///////////////////////////
 
-const anton = {
-  firstName: "Anton",
-  lastName: "Andrusenko",
-  birthYear: 1989,
-  job: "teacher",
-  friends: ["Michael", "Stephen", "Greg"],
-  hasDriverLicense: true,
+// const anton = {
+//   firstName: "Anton",
+//   lastName: "Andrusenko",
+//   birthYear: 1989,
+//   job: "teacher",
+//   friends: ["Michael", "Stephen", "Greg"],
+//   hasDriverLicense: true,
 
-  // calcAge: function (birthYear) {
-  //   return 2023 - anton.birthYear;
-  // },
+//   // calcAge: function (birthYear) {
+//   //   return 2023 - anton.birthYear;
+//   // },
 
-  calcAge: function () {
-    // console.log(this);
-    this.age = 2023 - this.birthYear;
-    return this.age;
+//   calcAge: function () {
+//     // console.log(this);
+//     this.age = 2023 - this.birthYear;
+//     return this.age;
 
-    // use this method to use properties from the object
-    // return 2023 - this.birthYear;
-  },
+//     // use this method to use properties from the object
+//     // return 2023 - this.birthYear;
+//   },
 
-  getSummary: function () {
-    ////BASIC WAY
+//   getSummary: function () {
+//     ////BASIC WAY
 
-    // if (this.hasDriverLicense) {
-    //   this.summary = `${this.firstName} is ${this.age}-year old ${this.job}, and he has a driver's license`;
-    // } else {
-    //   this.summary = `${this.firstName} is ${this.age}-year old ${this.job}, and he has no driver's license`;
-    // }
-    // return this.summary;
+//     // if (this.hasDriverLicense) {
+//     //   this.summary = `${this.firstName} is ${this.age}-year old ${this.job}, and he has a driver's license`;
+//     // } else {
+//     //   this.summary = `${this.firstName} is ${this.age}-year old ${this.job}, and he has no driver's license`;
+//     // }
+//     // return this.summary;
 
-    ////BETTER WAY
+//     ////BETTER WAY
 
-    // return this.hasDriverLicense
-    //   ? (this.summary = `${this.firstName} is ${this.calcAge()}-year old ${
-    //       this.job
-    //     }, and he has a driver's license`)
-    //   : (this.summary = `${this.firstName} is ${this.calcAge()}-year old ${
-    //       this.job
-    //     }, and he has no driver's license`);
+//     // return this.hasDriverLicense
+//     //   ? (this.summary = `${this.firstName} is ${this.calcAge()}-year old ${
+//     //       this.job
+//     //     }, and he has a driver's license`)
+//     //   : (this.summary = `${this.firstName} is ${this.calcAge()}-year old ${
+//     //       this.job
+//     //     }, and he has no driver's license`);
 
-    ////BEST WAY
+//     ////BEST WAY
 
-    this.summary = `${this.firstName} is a ${this.calcAge()}-year old ${
-      this.job
-    }, and he has ${this.hasDriverLicense ? "a" : "no"} driver's license`;
-    return this.summary;
+//     this.summary = `${this.firstName} is a ${this.calcAge()}-year old ${
+//       this.job
+//     }, and he has ${this.hasDriverLicense ? "a" : "no"} driver's license`;
+//     return this.summary;
+//   },
+// };
+
+// console.log(anton["calcAge"]());
+// console.log(anton.calcAge());
+
+// console.log(anton.age);
+// console.log(anton.age);
+// console.log(anton.age);
+
+// console.log(anton.getSummary());
+// console.log(anton);
+// console.log(anton.summary);
+
+// //challenge
+
+////////////////////////////////
+// -- CODING CHALLENGE # 2 -- //
+////////////////////////////////
+
+const propMarkMiller = {
+  firstName: `Mark`,
+  lastName: "Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi.toFixed(2);
   },
 };
 
-console.log(anton["calcAge"]());
-console.log(anton.calcAge());
+const propJohnSmith = {
+  firstName: `John`,
+  lastName: ` Smith`,
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi.toFixed(2);
+  },
+};
 
-console.log(anton.age);
-console.log(anton.age);
-console.log(anton.age);
+propJohnSmith.calcBMI();
+propMarkMiller.calcBMI();
 
-console.log(anton.getSummary());
-console.log(anton);
-console.log(anton.summary);
+// if (propJohnSmith.calcBMI() > propMarkMiller.calcBMI()) {
+//   console.log(
+//     `${
+//       propJohnSmith.firstName
+//     }'s BMI (${propJohnSmith.calcBMI()}) is higher than ${
+//       propMarkMiller.firstName
+//     }'s (${propMarkMiller.calcBMI()})!`
+//   );
+// } else if (propJohnSmith.calcBMI() < propMarkMiller.calcBMI()) {
+//   console.log(
+//     `${
+//       propMarkMiller.firstName
+//     }'s BMI (${propMarkMiller.calcBMI()}) is higher than ${
+//       propJohnSmith.firstName
+//     }'s (${propJohnSmith.calcBMI()})!`
+//   );
+// }
 
-//challenge
+if (propJohnSmith.bmi > propMarkMiller.bmi) {
+  console.log(
+    `${propJohnSmith.firstName}'s BMI (${propJohnSmith.bmi.toFixed(
+      2
+    )}) is higher than ${
+      propMarkMiller.firstName
+    }'s (${propMarkMiller.bmi.toFixed(2)})!`
+  );
+} else if (propJohnSmith.bmi < propMarkMiller.bmi) {
+  console.log(
+    `${propMarkMiller.firstName}'s BMI (${propMarkMiller.bmi.toFixed(
+      2
+    )}) is higher than ${
+      propJohnSmith.firstName
+    }'s (${propJohnSmith.bmi.toFixed(2)})!`
+  );
+}
