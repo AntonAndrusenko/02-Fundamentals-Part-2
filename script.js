@@ -483,14 +483,14 @@ console.log(mixJuice); */
 // -- LOOPING ARRAYS, BREAKING, CONTINUING -- //
 ////////////////////////////////////////////////
 
-const antonArray = [
-  "Anton",
-  "Andrusenko",
-  2023 - 1989,
-  "product owner",
-  ["Vasily", "Dima", "Stas"],
-  true,
-];
+// const antonArray = [
+//   "Anton",
+//   "Andrusenko",
+//   2023 - 1989,
+//   "product owner",
+//   ["Vasily", "Dima", "Stas"],
+//   true,
+// ];
 
 // const types = [];
 
@@ -518,14 +518,104 @@ const antonArray = [
 
 //continue and break
 
-console.log(`--ONLY STRINGS--`);
-for (let i = 0; i < antonArray.length; i++) {
-  if (typeof antonArray[i] !== "string") continue;
-  console.log(antonArray[i], typeof antonArray[i]);
+// console.log(`--ONLY STRINGS--`);
+// for (let i = 0; i < antonArray.length; i++) {
+//   if (typeof antonArray[i] !== "string") continue;
+//   console.log(antonArray[i], typeof antonArray[i]);
+// }
+
+// console.log(`--BREAK WITH NUMBER--`);
+// for (let i = 0; i < antonArray.length; i++) {
+//   if (typeof antonArray[i] === "number") break;
+//   console.log(antonArray[i], typeof antonArray[i]);
+// }
+
+/////////////////////////////////////////////
+// -- LOOPING BACKWARDS, LOOPS IN LOOPS -- //
+/////////////////////////////////////////////
+
+// const antonArray = [
+//   "Anton",
+//   "Andrusenko",
+//   2023 - 1989,
+//   "product owner",
+//   ["Vasily", "Dima", "Stas"],
+// ];
+
+// console.log(`---BACKWARDS---`);
+// for (let i = antonArray.length - 1; i >= 0; i--) {
+//   console.log(i, antonArray[i]);
+// }
+
+// console.log(`---FORWARD---`);
+// for (let i = 0; i < antonArray.length; i++) {
+//   console.log(i, antonArray[i]);
+// }
+
+// console.log(`---LOOPS IN LOOPS---`);
+
+// for (let exercise = 1; exercise < 4; exercise++) {
+//   console.log(`---------Starting excercise ${exercise}`);
+
+//   for (let rep = 1; rep < 6; rep++) {
+//     console.log(`Lifting weight repetition ${rep} 🏋️`);
+//   }
+// }
+
+//////////////////////////
+// -- THE WHILE LOOP -- //
+//////////////////////////
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️`);
+// }
+
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(rep, `WHILE: Lifting weights repetition ${rep} 🏋️`);
+//   rep++;
+// }
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+// while (dice !== 6) {
+//   console.log(rep, `You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) {
+//     console.log(`Loop is about to end up`);
+//   }
+// }
+
+////////////////////////////////
+// -- CODING CHALLENGE # 4 -- //
+////////////////////////////////
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  tips.push(calcTip(bills[i]));
+  totals.push(calcTip(bills[i]) + bills[i]);
 }
 
-console.log(`--BREAK WITH NUMBER--`);
-for (let i = 0; i < antonArray.length; i++) {
-  if (typeof antonArray[i] === "number") break;
-  console.log(antonArray[i], typeof antonArray[i]);
-}
+console.log(bills);
+console.log(tips);
+console.log(totals);
+
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    // sum = sum + arr[i];
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
+
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
